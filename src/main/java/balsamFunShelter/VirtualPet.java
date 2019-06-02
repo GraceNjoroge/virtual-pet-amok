@@ -6,14 +6,15 @@ public class VirtualPet {
 
 	private Random generator = new Random();
 
-	private String name;
-	private int hunger;
-	private int thirst;
-	private int boredom;
+	protected String name;
+	protected int hunger;
+	protected int thirst;
+	protected int boredom;
 	private int number;
 	private int sleep;
-	private String description;
+	public String description;
 	public int clean;
+	public int play;
 
 	public VirtualPet(String name, int thirst, int boredom, int hunger, String description) {
 		this.name = name;
@@ -22,6 +23,7 @@ public class VirtualPet {
 		boredom = 12;
 		this.description = description;
 		clean = 5;
+		play = 10;
 	}
 
 	// getters
@@ -173,6 +175,31 @@ public class VirtualPet {
 			return true;
 		}
 
+	}
+
+	public String getPetType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public int getPetHealth() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int play() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getPetWalk() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int getCleanLevel() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 

@@ -11,6 +11,8 @@ public class VirtualPetShelter {
 
 	private int number = 0;
 
+	public int adoptVirtualPet;
+
 	public VirtualPet findPet(String petName) {
 		return virtualPets.get(petName);
 	}
@@ -97,6 +99,11 @@ public class VirtualPetShelter {
 					+ pet.getBoredom() + "\t");
 		}
 
+	}
+
+	public Object isAdopted() {
+		// TODO Auto-generated method stub
+		return true;
 	}
 
 }

@@ -102,4 +102,5 @@ public class VirtualPetShelterApp {
 		}		
 			input.close();
 		}
-		while (shelterPets.petIsAlive());
+		while (shelterPets.petAreAlive());
+}}
