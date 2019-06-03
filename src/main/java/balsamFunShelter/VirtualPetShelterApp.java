@@ -99,8 +99,8 @@ public class VirtualPetShelterApp {
 		default: 
 //			System.out.println("Sorry to see you go. Hope you come again");
 //			break;
-		}		
-			input.close();
-		}
-		while (shelterPets.petAreAlive());
-}}
+//		}		
+//			input.close();
+//		}
+//		while (shelterPets.petAreAlive());
+}}}

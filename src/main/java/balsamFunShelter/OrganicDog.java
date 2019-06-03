@@ -17,4 +17,24 @@ public class OrganicDog extends VirtualPet {
 		
 	}
 
+	public int getCageWasteAmount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void cleanCage() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getHappiness() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public void walk() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

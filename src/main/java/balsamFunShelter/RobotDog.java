@@ -17,4 +17,15 @@ public class RobotDog extends VirtualPet {
 		
 	}
 
+	public void walk() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int getHappiness() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+
 }

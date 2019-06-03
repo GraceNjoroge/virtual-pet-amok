@@ -29,4 +29,12 @@ public class RoboticTest {
 	    underTest.dogOil();
 	    int robotDogOilAfter = underTest.getOilLevel();
 	    assertThat(robotDogOilBefore - robotDogOilAfter, is(10));
-	}}
+	}
+	@Test 
+	public void assertThatWalkIncreasesRobotDogHappiness() {
+		RobotDog underTest = new RobotDog("", "");
+		underTest.walk();
+		int check = underTest.getHappiness();
+		assertEquals(check, 5);
+	}
+}

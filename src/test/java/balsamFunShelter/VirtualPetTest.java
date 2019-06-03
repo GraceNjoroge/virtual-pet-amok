@@ -13,12 +13,7 @@ public class VirtualPetTest {
 		assertEquals("Joey", petName);
 	}
 
-	@Test
-	public void shouldReturnPetType() {
-		VirtualPet underTest = new VirtualPet("Joey", 83, 34, 23, " ");
-		String petType = underTest.getPetType();
-		assertEquals(" ", petType);
-	}
+
 
 	@Test
 	public void shouldReturnPetDescription() {
@@ -31,7 +26,7 @@ public class VirtualPetTest {
 	public void shouldReturnPetHungerLevel() {
 		VirtualPet underTest = new VirtualPet("", 83, 34, 23, "");
 		int hunger = underTest.getHunger();
-		assertEquals(83, hunger);
+		assertEquals(23, hunger);
 	}
 
 	@Test
@@ -45,7 +40,7 @@ public class VirtualPetTest {
 	public void shouldReturnPetThirstLevel() {
 		VirtualPet underTest = new VirtualPet("", 83, 34, 23, " ");
 		int thirst = underTest.getThirst();
-		assertEquals(34, thirst);
+		assertEquals(83, thirst);
 	}
 
 	@Test
@@ -59,7 +54,7 @@ public class VirtualPetTest {
 	public void shouldReturnPetBoredomLevel() {
 		VirtualPet underTest = new VirtualPet("", 83, 34, 23, "");
 		int boredom = underTest.getBoredom();
-		assertEquals(23, boredom);
+		assertEquals(34, boredom);
 	}
 
 	@Test
@@ -72,27 +67,16 @@ public class VirtualPetTest {
 	@Test
 	public void shouldWalkPet() {
 		VirtualPet underTest = new VirtualPet("", 83, 34, 23, "");
-		int petwalk = underTest.getPetWalk();
+		int petwalk = underTest.walk =10;
 		assertEquals(10, petwalk);
 	}
 
+
 	@Test
-	public void shouldCleanPetCageForOrganicAnimals() {
+	public void setPetHealthGetter() {
 		VirtualPet underTest = new VirtualPet("", 83, 34, 23, "");
-		int isClean = underTest.clean = 5;
-		assertEquals(5, isClean);
-	}
-	@Test
-	public void shouldReturnCageCleanlinessLevel() {
-		VirtualPet underTest = new VirtualPet("", 83, 34, 23, "");
-		int isClean = underTest.getCleanLevel();
-		assertEquals(83, isClean);
-	}
-	@Test
-	public void shouldReturnPetHealth() {
-		VirtualPet underTest = new VirtualPet("", 83, 34, 23, "");
-		int petHealth = underTest.getPetHealth();
-		assertEquals(10, petHealth);
+		underTest.health = 10;
+		assertEquals(10, underTest.getPetHealth());
 
 	}
 

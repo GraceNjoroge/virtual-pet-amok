@@ -15,15 +15,18 @@ public class VirtualPet {
 	public String description;
 	public int clean;
 	public int play;
+	public int health;
+	public int walk;
 
 	public VirtualPet(String name, int thirst, int boredom, int hunger, String description) {
 		this.name = name;
-		hunger = 5;
-		thirst = 13;
-		boredom = 12;
+		this.hunger = hunger;
+		this.thirst = thirst;
+		this.boredom = boredom;
 		this.description = description;
 		clean = 5;
 		play = 10;
+		walk = 5;
 	}
 
 	// getters
@@ -57,8 +60,23 @@ public class VirtualPet {
 		return description;
 	}
 
-	public int feed(int quantity) {
+	public int getPetHealth() {
+		return this.health;
+	}
 
+	public int play() {
+		return 0;
+	}
+
+	public int getPetWalk() {
+		return 0;
+	}
+
+	public int getCleanLevel() {
+		return 0;
+	}
+
+	public int feed(int quantity) {
 		return quantity;
 	}
 
@@ -97,19 +115,17 @@ public class VirtualPet {
 	public void play(int play) {
 		this.boredom -= play;
 	}
-	
+
 	public void clean(int level) {
-	if (clean>level) {
-	}else {
-		int health = level;
-	}
-	System.out.println("My cage needs cleaned");
-		
+		if (clean > level) {
+		} else {
+			System.out.println("My cage needs cleaned");
+		}
 	}
 
 	public void sleep(int amount) {
 		if (sleep > amount) {
-		}else {
+		} else {
 			hunger = amount;
 		}
 		System.out.println("I need to sleep");
@@ -177,38 +193,7 @@ public class VirtualPet {
 
 	}
 
-	public String getPetType() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+}
 
-	public int getPetHealth() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public int play() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public int getPetWalk() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public int getCleanLevel() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-		
-	}
-
-
-		//from class
-	//public void 
-	
-
-
+// from class
+// public void
