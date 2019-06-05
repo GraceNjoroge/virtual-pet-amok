@@ -1,7 +1,7 @@
 package balsamFunShelter;
 
 import static org.junit.Assert.assertEquals;
-//import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
 
@@ -21,8 +21,8 @@ public class PetShelterTest {
 	public void initial() {
 		// Arrange
 		underTest = new VirtualPetShelter();
-		pet1 = new VirtualPet("Twinkle", 34, 20, 12, "laughs endlessly");
-		pet2 = new VirtualPet("Jimmy", 15, 10, 45, "snores loudly");
+		pet1 = new VirtualPet("Twinkle", "laughs endlessly");
+		pet2 = new VirtualPet("Jimmy", "snores loudly");
 
 	}
 
@@ -56,13 +56,14 @@ public class PetShelterTest {
 		assertEquals(1, underTest.getNumber());
 
 	}
-//	
-//	@Test
-//	public void petGettingAdoptedCheck() {
-//		VirtualPetShelter underTest = new VirtualPetShelter();
-//		String isAdopted = underTest.adoptVirtualPet();
-//		assertTrue(underTest.isAdopted());
-
+	
+	@Test
+	public void petGettingAdoptedCheck() {
+		VirtualPetShelter underTest = new VirtualPetShelter();
+		String isAdopted = underTest.adoptVirtualPet(pet1);
+		assertTrue(underTest.isAdopted());
+	}
+	
 	@Test
 	public void shouldReturnPetNumberInShelter() {
 		VirtualPetShelter underTest = new VirtualPetShelter();
@@ -76,7 +77,7 @@ public class PetShelterTest {
 		// Act
 
 		int pet1HungerLevelStart = pet1.getHunger();
-		underTest.feedAll();
+		underTest.feedAllOrganic();
 		int pet1HungerLevelEnd = pet1.getHunger();
 		// Assert
 		assertEquals(pet1HungerLevelEnd, pet1HungerLevelStart - 1);
@@ -86,7 +87,7 @@ public class PetShelterTest {
 		// Act
 
 		int pet1ThirstLevelStart = pet1.getThirst();
-		underTest.waterAll();
+		underTest.waterAllOrganic();
 		int pet1ThirstLevelEnd = pet1.getThirst();
 		// Assert
 		assertEquals(pet1ThirstLevelEnd, pet1ThirstLevelStart - 3);

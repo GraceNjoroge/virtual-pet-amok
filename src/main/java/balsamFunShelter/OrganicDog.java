@@ -1,40 +1,50 @@
 package balsamFunShelter;
 
-public class OrganicDog extends VirtualPet {
+public class OrganicDog extends VirtualPet implements OrganicPet {
 
-	public OrganicDog(String name, int thirst, int boredom, int hunger, String description) {
-		super(name, thirst, boredom, hunger, description);
-		// TODO Auto-generated constructor stub
-	}
+	private int cageWasteAmount;
 
-	public void feed() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void water() {
-		// TODO Auto-generated method stub
-		
+	public OrganicDog(String name, String description) {
+		super(name, description);
+		this.cageWasteAmount = 5;
 	}
 
 	public int getCageWasteAmount() {
 		// TODO Auto-generated method stub
-		return 0;
+		return cageWasteAmount;
 	}
 
 	public void cleanCage() {
-		// TODO Auto-generated method stub
-		
-	}
+		cageWasteAmount = 0;
 
-	public int getHappiness() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	public void walk() {
+	cageWasteAmount = 10;
+
+	}
+
+	@Override
+	public String getName() {
+		return null;
+	}
+
+	@Override
+	public int tick() {
+		return 0;
+
+	}
+
+	@Override
+	public void water() {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	@Override
+	public void feed() {
+		// TODO Auto-generated method stub
+
 	}
 
 }

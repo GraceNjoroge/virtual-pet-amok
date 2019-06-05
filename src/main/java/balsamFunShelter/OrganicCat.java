@@ -1,9 +1,9 @@
 package balsamFunShelter;
 
-public class OrganicCat extends VirtualPet {
+public class OrganicCat extends VirtualPet implements OrganicPet {
 
-	public OrganicCat(String name, int thirst, int boredom, int hunger, String description) {
-		super(name, thirst, boredom, hunger, description);
+	public OrganicCat(String name, String description) {
+		super(name, description);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -29,6 +29,18 @@ public class OrganicCat extends VirtualPet {
 	}
 
 	public int getLitterBoxLevel() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int tick() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

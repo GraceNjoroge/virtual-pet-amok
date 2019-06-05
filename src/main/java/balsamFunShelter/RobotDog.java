@@ -1,31 +1,33 @@
 package balsamFunShelter;
 
-public class RobotDog extends VirtualPet {
+public class RobotDog extends VirtualPet implements RoboticPet {
+
+	private int oilLevel;
 
 	public RobotDog(String name, String description) {
-		super(name, thirst, boredom, hunger, description);
-		// TODO Auto-generated constructor stub
+		super(name, description);
+		this.oilLevel = 25;
+
 	}
 
 	public int getOilLevel() {
-		// TODO Auto-generated method stub
-		return 0;
+		return oilLevel;
 	}
 
 	public void dogOil() {
-		// TODO Auto-generated method stub
-		
+		return;
+
 	}
 
 	public void walk() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	public int getHappiness() {
+	@Override
+	public void OilRobotPet() {
 		// TODO Auto-generated method stub
-		return 0;
+
 	}
-	
 
 }

@@ -16,17 +16,21 @@ public class VirtualPet {
 	public int clean;
 	public int play;
 	public int health;
+	public int happiness;
 	public int walk;
 
-	public VirtualPet(String name, int thirst, int boredom, int hunger, String description) {
+	public VirtualPet(String name, String description) {
 		this.name = name;
-		this.hunger = hunger;
-		this.thirst = thirst;
-		this.boredom = boredom;
+		this.hunger = 5;
+		this.thirst = 10;
+		this.boredom = 35;
 		this.description = description;
-		clean = 5;
-		play = 10;
-		walk = 5;
+		this.happiness =10;
+		this.health = 5;
+		this.clean = 5;
+		this.play = 10;
+		this.walk =5;
+	
 	}
 
 	// getters
@@ -64,8 +68,9 @@ public class VirtualPet {
 		return this.health;
 	}
 
-	public int play() {
-		return 0;
+	public void play() {
+		boredom -=10;
+		setHappiness(getHappiness() + 5);
 	}
 
 	public int getPetWalk() {
@@ -75,7 +80,9 @@ public class VirtualPet {
 	public int getCleanLevel() {
 		return 0;
 	}
-
+	public int getOilLevel() {
+		return 10;
+	}
 	public int feed(int quantity) {
 		return quantity;
 	}
@@ -164,14 +171,14 @@ public class VirtualPet {
 	}
 
 	// tick generator
-	public void tick() {
+	public int tick(int selection) {
 		hunger += (5 + generateRandom());
 		thirst -= (10 + generateRandom());
 		boredom -= (10 + generateRandom());
-
+		return 0;
 	}
 
-	private int generateRandom() {
+	protected int generateRandom() {
 		return generator.nextInt(10);
 	}
 
@@ -192,6 +199,26 @@ public class VirtualPet {
 		}
 
 	}
+
+	public int getHappiness() {
+		return happiness;
+	}
+
+	public void setHappiness(int happiness) {
+		this.happiness = happiness;
+	}
+
+	public void setHealth(int i) {
+	this.health =30;
+		
+	}
+
+	public void setBoredom(int i) {
+		this.boredom =25;
+		
+	}
+
+
 
 }
 

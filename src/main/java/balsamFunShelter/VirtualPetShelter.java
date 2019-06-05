@@ -11,7 +11,13 @@ public class VirtualPetShelter {
 
 	private int number = 0;
 
-	public int adoptVirtualPet;
+//	public int adoptVirtualPet;
+
+	private int litterBoxLevel;
+
+	private VirtualPet pet;
+
+	private String isAdopted;
 
 	public VirtualPet findPet(String petName) {
 		return virtualPets.get(petName);
@@ -25,6 +31,14 @@ public class VirtualPetShelter {
 
 	public int getNumber() {
 		return number;
+	}
+
+	public boolean isAdopted() {
+		return true;
+	}
+
+	public int getLitterBoxLevel() {
+		return litterBoxLevel;
 	}
 
 	public Collection<VirtualPet> getAllPets() {
@@ -42,9 +56,10 @@ public class VirtualPetShelter {
 
 	}
 
-	public void adoptVirtualPet(VirtualPet pet1) {
+	public String adoptVirtualPet(VirtualPet pet1) {
 		virtualPets.remove(pet1.getPetName());
 		number--;
+		return isAdopted;
 
 	}
 
@@ -56,54 +71,131 @@ public class VirtualPetShelter {
 	public VirtualPet getPetNamed(String chosenPet) {
 		return null;
 	}
-//
-//	public void removeVariety(String petToRemove) {
-//		for (int i = virtualPets.size() - 1; i >= 0; i--) {
-//			if (virtualPets.get(i).getPetName().equals(petToRemove)) {
-//				virtualPets.remove(i);
-//				break;
 
-	public void feedAll() {
+	public void oilAllRobotPets() {
 		for (VirtualPet pet : virtualPets.values()) {
-			pet.feed(10);
+			if (pet instanceof RoboticPet) {
+				((RoboticPet) pet).OilRobotPet();
+			}
+		}
+	}
+
+	public void cleanAllCages() {
+		for (VirtualPet pet : virtualPets.values()) {
+			if (pet instanceof OrganicDog) {
+				((OrganicDog) pet).cleanCage();
+
+			}
+		}
+	}
+	
+	public void cleanLitterBox() {
+		for (VirtualPet pet : virtualPets.values()) {
+			if (pet instanceof OrganicCat) {
+				((OrganicCat) pet).cleanLitterBox();
+			}}}
+
+	public void feedAllOrganic() {
+		for (VirtualPet pet : virtualPets.values()) {
+			if (pet instanceof OrganicPet) {
+				((OrganicPet) pet).feed();
+			}
+
+		}
+
+		for (VirtualPet pet : virtualPets.values()) {
+			if (pet instanceof OrganicCat) {
+				setLitterBoxLevel(getLitterBoxLevel() + 2);
+			}
+		}
+	}
+
+	private void setLitterBoxLevel(int i) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void walkDogs() {
+		for (VirtualPet pet : virtualPets.values()) {
+			if (pet instanceof Dog) {
+				((Dog) pet).walk();
+			}
+		}
+	}
+
+
+	public void waterAllOrganic() {
+		for (VirtualPet pet : virtualPets.values()) {
+			if (pet instanceof OrganicPet) {
+				((OrganicPet) pet).water();
+			}
 		}
 
 	}
 
-	public void waterAll() {
-		for (VirtualPet pet : virtualPets.values()) {
-			pet.water(5);
-		}
-		}
-		public void CleanAllCages() {
-			for (VirtualPet pet : virtualPets.values()) {
-				pet.clean(3);
-	}
-		}
 	public void playWith(String petName, int value) {
 		virtualPets.get(petName).play(value);
 	}
 
-	public void updateAllTick() {
+	public void updateAllTick(int selection) {
 
 		for (VirtualPet pet : virtualPets.values()) {
-			pet.tick();
+			pet.tick(selection);
+			if (pet.getPetHealth() > 30) {
+					pet.setHealth(30);
+				}
+				if (pet.getPetHealth() < 0) {
+					pet.setHealth(0);
+				}
+				if (pet.getHappiness() > 45) {
+					pet.setHappiness(45);
+				}
+				if (pet.getHappiness() < 0) {
+					pet.setHappiness(0);
+				}
+				if (pet.getBoredom() > 25) {
+					pet.setBoredom(25);
+				}
+				if (pet.getBoredom() < 0) {
+					pet.setBoredom(0);
+				}
+			}
+			if (litterBoxLevel < 10) {
+				pet.setHappiness(40);
+			}
+			if (litterBoxLevel > 45) {
+				pet.setHappiness(0);;
+			}}
+
+public void updateAllTick() {
+	for (VirtualPet organicCat : virtualPets.values()) {
+		System.out.println("Name \t\t | Hunger \t\t | Thirst \t\t | Health  ");
+		System.out.println("_______________________________________________");
+	if (virtualPets instanceof OrganicCat) {
+		System.out.println(organicCat.getPetName() + " \t  |" + organicCat.getHunger() + " \t  |" + organicCat.getThirst() + " \t  |"
+					+ organicCat.getPetHealth() + "\t");
 		}
-	}
-
-	public void updateAllPetStatus(Collection<VirtualPet> allPets) {
-		for (VirtualPet pet : allPets) {
-			System.out.println("Name \t\t | Hunger \t\t | Thirst \t\t | Bored  ");
-			System.out.println("_______________________________________________");
-			System.out.println(pet.getPetName() + " \t  |" + pet.getHunger() + " \t  |" + pet.getThirst() + " \t  |"
-					+ pet.getBoredom() + "\t");
-		}
+			
+	for (VirtualPet organicDog : virtualPets.values()) {
+		System.out.println("Name \t\t | Hunger \t\t | Thirst \t\t | Health  ");
+		System.out.println("_______________________________________________");
+	if (virtualPets instanceof OrganicDog) {
+		System.out.println(organicDog.getPetName() + " \t  |" + organicDog.getHunger() + " \t  |" + organicDog.getThirst() + " \t  |"
+							+ organicDog.getPetHealth() + "\t");
 
 	}
-
-	public Object isAdopted() {
-		// TODO Auto-generated method stub
-		return true;
+				
+	for (VirtualPet robotDog : virtualPets.values()) {
+	    System.out.println("Name \t\t | OilLevel  ");
+	    System.out.println("________________________");
+	if  (virtualPets instanceof RobotDog) {
+	    System.out.println(robotDog.getPetName() + " \t  |" + robotDog.getOilLevel());
 	}
+	else 
+		System.out.println("Try again, that type of pet is not known");
+	}}}}
+	
 
-}
+public boolean petsAreAlive() {
+	return true;
+}}
