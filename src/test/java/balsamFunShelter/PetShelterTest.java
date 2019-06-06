@@ -1,8 +1,6 @@
 package balsamFunShelter;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 import java.util.Collection;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -56,14 +54,8 @@ public class PetShelterTest {
 		assertEquals(1, underTest.getNumber());
 
 	}
-	
-	@Test
-	public void petGettingAdoptedCheck() {
-		VirtualPetShelter underTest = new VirtualPetShelter();
-		String isAdopted = underTest.adoptVirtualPet(pet1);
-		assertTrue(underTest.isAdopted());
-	}
-	
+
+
 	@Test
 	public void shouldReturnPetNumberInShelter() {
 		VirtualPetShelter underTest = new VirtualPetShelter();

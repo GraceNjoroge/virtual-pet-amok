@@ -10,7 +10,6 @@ public class OrganicDog extends VirtualPet implements OrganicPet {
 	}
 
 	public int getCageWasteAmount() {
-		// TODO Auto-generated method stub
 		return cageWasteAmount;
 	}
 
@@ -20,7 +19,7 @@ public class OrganicDog extends VirtualPet implements OrganicPet {
 	}
 
 	public void walk() {
-	cageWasteAmount = 10;
+		cageWasteAmount = -5;
 
 	}
 

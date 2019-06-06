@@ -6,7 +6,7 @@ public class RobotDog extends VirtualPet implements RoboticPet {
 
 	public RobotDog(String name, String description) {
 		super(name, description);
-		this.oilLevel = 25;
+		this.oilLevel = 0;
 
 	}
 
@@ -14,8 +14,8 @@ public class RobotDog extends VirtualPet implements RoboticPet {
 		return oilLevel;
 	}
 
-	public void dogOil() {
-		return;
+	public int dogOil() {
+		return 30;
 
 	}
 

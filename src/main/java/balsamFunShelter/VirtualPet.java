@@ -18,6 +18,7 @@ public class VirtualPet {
 	public int health;
 	public int happiness;
 	public int walk;
+	public int oilLevel;
 
 	public VirtualPet(String name, String description) {
 		this.name = name;
@@ -25,12 +26,12 @@ public class VirtualPet {
 		this.thirst = 10;
 		this.boredom = 35;
 		this.description = description;
-		this.happiness =10;
+		this.happiness = 10;
 		this.health = 5;
 		this.clean = 5;
 		this.play = 10;
-		this.walk =5;
-	
+		this.walk = 5;
+
 	}
 
 	// getters
@@ -68,9 +69,8 @@ public class VirtualPet {
 		return this.health;
 	}
 
-	public void play() {
-		boredom -=10;
-		setHappiness(getHappiness() + 5);
+	public int getHappiness() {
+		return happiness;
 	}
 
 	public int getPetWalk() {
@@ -80,9 +80,11 @@ public class VirtualPet {
 	public int getCleanLevel() {
 		return 0;
 	}
+
 	public int getOilLevel() {
 		return 10;
 	}
+
 	public int feed(int quantity) {
 		return quantity;
 	}
@@ -116,11 +118,29 @@ public class VirtualPet {
 			return true;
 		}
 		return false;
-
 	}
 
 	public void play(int play) {
 		this.boredom -= play;
+	}
+
+	public void play() {
+		boredom -= 10;
+		setHappiness(getHappiness() + 5);
+	}
+
+	public void setHappiness(int happiness) {
+		this.happiness = happiness;
+	}
+
+	public void setHealth(int i) {
+		this.health = 30;
+
+	}
+
+	public void setBoredom(int i) {
+		this.boredom = 25;
+
 	}
 
 	public void clean(int level) {
@@ -145,32 +165,7 @@ public class VirtualPet {
 		return false;
 	}
 
-	public String petStatus() {
-		String feelingHungry = "";
-		String feelingThirsty = "";
-		String feelingBored = "";
-		String feelingTired = "";
-
-		if (this.isHungry()) {
-			feelingHungry = "Getting hungry. Please give" + this.name + "some food.";
-
-		}
-		if (this.isThirsty()) {
-			feelingThirsty = "Getting thirsty" + this.name + "some water.";
-		}
-
-		if (this.isBored()) {
-			feelingBored = "This is boring. Play with me";
-
-		}
-		if (this.isTired()) {
-			feelingTired = " Sleep time";
-		}
-		String petStatus = feelingHungry + feelingThirsty + feelingBored + feelingTired;
-		return petStatus;
-	}
-
-	// tick generator
+// tick generator
 	public int tick(int selection) {
 		hunger += (5 + generateRandom());
 		thirst -= (10 + generateRandom());
@@ -200,27 +195,5 @@ public class VirtualPet {
 
 	}
 
-	public int getHappiness() {
-		return happiness;
-	}
-
-	public void setHappiness(int happiness) {
-		this.happiness = happiness;
-	}
-
-	public void setHealth(int i) {
-	this.health =30;
-		
-	}
-
-	public void setBoredom(int i) {
-		this.boredom =25;
-		
-	}
-
-
-
 }
 
-// from class
-// public void

@@ -16,7 +16,7 @@ public class VirtualPetShelterApp {
 		VirtualPet pet2 = new OrganicCat("Johnny", "is a bit nervous");
 		VirtualPet pet3 = new OrganicDog("Dee Dee", "didn't start with that many legs");
 		VirtualPet pet4 = new OrganicDog("Tommy", "smells like a stargazer lilly");
-		VirtualPet pet5 = new RobotDog("Bingo" , "loves to write code");
+		VirtualPet pet5 = new RobotDog("Bingo", "loves to write code");
 		VirtualPet pet6 = new RobotDog("Rolly", "Has been around the world");
 
 		shelterPets.addVirtualPet(pet1);
@@ -25,8 +25,6 @@ public class VirtualPetShelterApp {
 		shelterPets.addVirtualPet(pet4);
 		shelterPets.addVirtualPet(pet5);
 		shelterPets.addVirtualPet(pet6);
-		
-		do {
 
 		System.out.println("Thank you for Volunteering at Balsam's funhouse Virtual Pet Shelter");
 
@@ -34,10 +32,8 @@ public class VirtualPetShelterApp {
 		System.out.println(" Name    | Description ");
 		System.out.println("__________________________");
 
-		
 		for (VirtualPet currentPet : shelterPets.getAllPets()) {
-			System.out.println(currentPet.getPetName() + "\t|" + currentPet.getHunger() + "\t|" + currentPet.getThirst() + "\t|"
-					+ currentPet.getBoredom() + "\t|" + currentPet.getPetDescription());
+			System.out.println(currentPet.getPetName() + "\t|" + currentPet.getPetDescription());
 		}
 		System.out.println("Do you want to continue?");
 		String answer = input.nextLine();
@@ -50,10 +46,9 @@ public class VirtualPetShelterApp {
 		System.out.println("4. Adopt a pet?");
 		System.out.println("5. Take in a pet");
 		System.out.println("6. Walk all Dogs");
-	    System.out.println("7. Clean Dog Cages");
-	    System.out.println("8. Clean the shelter Litterbox");
-	    System.out.println("9. Oil all robotic Pets");
-		System.out.println("10. Check pet status");
+		System.out.println("7. Clean Dog Cages");
+		System.out.println("8. Clean the shelter Litterbox");
+		System.out.println("9. Oil all robotic Pets");
 
 		int response = input.nextInt();
 
@@ -110,23 +105,22 @@ public class VirtualPetShelterApp {
 			shelterPets.cleanAllCages();
 			System.out.println("The dog cages are spackling clean. Thanks!");
 			break;
-		case 8: 
+		case 8:
 			shelterPets.updateAllTick();
 			shelterPets.cleanLitterBox();
 			System.out.println("Great job! The LitterBox are clean");
 			break;
-		case 9: 
+		case 9:
 			shelterPets.updateAllTick();
 			shelterPets.oilAllRobotPets();
 			System.out.println("The robot pets are now oiled! Thanks");
 			break;
-			
-		default: 
-		System.out.println("Sorry to see you go. Hope you come again");
-		break;
-	}		
+
+		default:
+			System.out.println("Sorry to see you go. Hope you come again");
+			break;
+		}
 		input.close();
+
 	}
-	while (shelterPets.petsAreAlive());
-		
-	}}
+}
